@@ -17,6 +17,9 @@ public class Post {
   @GeneratedValue(strategy = GenerationType.IDENTITY) 
   private Long id;
 
+  @Version
+  private Long version;
+
   @NotNull
   @Size(min = 4, max = 100)
   private String title;
@@ -25,7 +28,6 @@ public class Post {
 
   @ManyToOne(fetch = FetchType.EAGER) private Author author;
 
-  @Version private Long version;
 
   public Author getAuthor() { return author; }
 
