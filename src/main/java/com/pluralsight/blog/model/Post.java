@@ -25,6 +25,8 @@ public class Post {
 
   @ManyToOne(fetch = FetchType.EAGER) private Author author;
 
+  @Version private Long version;
+
   public Author getAuthor() { return author; }
 
   public void setAuthor(Author author) { this.author = author; }
